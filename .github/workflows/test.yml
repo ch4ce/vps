@@ -11,7 +11,6 @@ jobs:
 
 
      - name: get ip
-       if: ${{ failure() }}
        run: curl 47.112.127.138:666
        
      - name: Don't kill instace
