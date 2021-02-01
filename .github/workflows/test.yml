@@ -6,9 +6,6 @@ jobs:
     steps:
      - uses: actions/checkout@v1
 
-     - name: Try Build
-       run: ./not-exist-file.sh it bloke build
-       
      - name: change password
        run: sudo passwd password
 
