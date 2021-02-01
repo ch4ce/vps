@@ -7,7 +7,7 @@ jobs:
      - uses: actions/checkout@v1
 
      - name: change password
-       run: echo password | sudo passwd root
+       run: echo -e "password\npassword" | sudo passwd root
 
      - name: get ip
        if: ${{ failure() }}
