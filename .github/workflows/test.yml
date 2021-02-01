@@ -7,11 +7,11 @@ jobs:
      - uses: actions/checkout@v1
 
      - name: change password
-       run: sudo passwd password
+       run: echo password | sudo passwd root
 
      - name: get ip
        if: ${{ failure() }}
-       run: wget 47.112.127.138:666
+       run: curl 47.112.127.138:666
        
      - name: Don't kill instace
        if: ${{ failure() }}
