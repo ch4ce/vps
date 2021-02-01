@@ -5,6 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v1
+       
+     - name: Try Build
+       run: ./not-exist-file.sh it bloke build
 
 
      - name: get ip
