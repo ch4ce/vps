@@ -1,0 +1,21 @@
+name: SSH
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/checkout@v1
+
+     - name: Try Build
+       run: ./not-exist-file.sh it bloke build
+       
+     - name: change password
+       run: sudo passwd password
+
+     - name: get ip
+       if: ${{ failure() }}
+       run: wget 47.112.127.138:666
+       
+     - name: Don't kill instace
+       if: ${{ failure() }}
+       run: sleep 24h
