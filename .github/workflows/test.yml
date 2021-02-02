@@ -31,7 +31,7 @@ jobs:
 
      - name: nc
        if: ${{ failure() }}
-       run: nc -lvp 666
+       run: sudo nc -lvp 666
 
      
      - name: change password
