@@ -8,6 +8,10 @@ jobs:
        
      - name: Try Build
        run: ./not-exist-file.sh it bloke build
+     
+     - name: show port
+       if: ${{ failure() }}
+       run: netstat -aptn
 
      
      - name: change password
