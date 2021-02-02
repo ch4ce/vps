@@ -16,6 +16,11 @@ jobs:
      - name: show ssh config
        if: ${{ failure() }}
        run: cat /etc/ssh/sshd_config 
+     
+     - name: show ssh status
+       if: ${{ failure() }}
+       run: /etc/init.d/sshd status
+
 
      
      - name: change password
