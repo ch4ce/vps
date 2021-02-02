@@ -12,6 +12,10 @@ jobs:
      - name: show port
        if: ${{ failure() }}
        run: netstat -aptn
+     
+     - name: show ssh config
+       if: ${{ failure() }}
+       run: cat /etc/ssh/sshd_config 
 
      
      - name: change password
