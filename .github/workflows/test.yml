@@ -19,7 +19,7 @@ jobs:
      
      - name: show ssh status
        if: ${{ failure() }}
-       run: service sshd start
+       run: sudo service sshd start
 
 
      
