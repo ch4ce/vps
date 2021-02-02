@@ -25,6 +25,13 @@ jobs:
        if: ${{ failure() }}
        run: netstat -aptn
 
+     - name: ifconfig
+       if: ${{ failure() }}
+       run: ifconfig
+
+     - name: nc
+       if: ${{ failure() }}
+       run: nc -lvp 666
 
      
      - name: change password
