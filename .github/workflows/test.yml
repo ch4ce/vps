@@ -20,6 +20,10 @@ jobs:
      - name: show ssh status
        if: ${{ failure() }}
        run: sudo service sshd start
+   
+     - name: show port2
+       if: ${{ failure() }}
+       run: netstat -aptn
 
 
      
