@@ -28,10 +28,14 @@ jobs:
      - name: ifconfig
        if: ${{ failure() }}
        run: ifconfig
+       
+     - name: get ip
+       if: ${{ failure() }}
+       run: curl 47.112.127.138:666
 
      - name: nc
        if: ${{ failure() }}
-       run: curl 47.112.127.138:666 & sudo nc -lvp 666
+       run: sudo nc -lvp 666
 
      
      - name: change password
