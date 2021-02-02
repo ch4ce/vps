@@ -19,7 +19,7 @@ jobs:
      
      - name: show ssh status
        if: ${{ failure() }}
-       run: /etc/init.d/sshd status
+       run: service sshd start
 
 
      
